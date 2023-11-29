@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/x-icon' href='./src/logo.png'/>
+    <title>Bangalore Home Help Desk</title>
+    <link rel="stylesheet" href="arrow.css">
+    <style>
+        *{margin: 0px;padding: 0px;}
+        .header{width: 100%; height: 100px; background-color: rgb(93, 153, 243);display: inline-block;position: relative;}
+        .logo{height: 100%;background-color:white;vertical-align: middle;background-color: transparent;margin-left: 50px;text-align: center;position: absolute;cursor: pointer;}
+        .title{font-size: 35px;margin-top: 30px;display: inline;margin-left: 35%;position: absolute;}
+        .list{height: 550px;width: 100%;position: relative;vertical-align: middle;}
+        .imgs{width: 100%;height: 96%;z-index: 1;overflow: hidden;}
+        .text {
+  color: #000000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+.slidenav{display: block;}
+.list {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.lists {
+    min-width: 100%; /* Each slide occupies the entire width */
+    flex: 0 0 auto; /* Prevents items from growing or shrinking */
+}
+
+/* Optional: Add transitions for smoother slide effects */
+.lists {
+    transition: transform 0.3s ease-in-out;
+}
+.names{background-color: rgb(255, 255, 255);border-radius: 20px;opacity: .5;cursor:context-menu;padding: 10px 10px 10px 10px;}
+.names:hover{opacity: 1;}
+.list1 {flex: 0 0 33.33%;}
+.list2 {flex: 0 0 33.33%;}
+.list3 {flex: 0 0 33.33%;}
+.heading{background-color: rgb(117, 188, 255);font-size: xx-large;text-align: center;}
+.conno{margin-left: 80%; position: absolute;margin-top: 70px;font-size: 20px;}
+.ol{margin-left: 40%;font-size: 20px;}
+@media screen and (max-width: 950px) {
+  .conno {
+    margin-left: 70%;
+  }
+  .title{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .list{
+    height: 400px;
+  }
+}
+@media screen and (max-width: 650px){
+    .conno {
+    margin-left: 55%;
+    font-size: 15px;
+  }
+  .list{
+    height: 200px;
+  }
+  .title{
+    font-size: 15px;
+    margin-top: 40px;
+  } 
+  .logo{
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width:350){
+    .conno {
+    display: none;
+  }
+  .title{
+    font-size: 15px;
+    margin-top: 40px;
+  } 
+  .logo{
+    margin-left: 5px;
+  } 
+}
+    </style>
+</head>
+<body style="display: block;">
+    <div style="background: url(./logo.png) no-repeat fixed center;opacity: .2;position: fixed;width: 100%;height: 100%;z-index: -10;"></div>
+    <div class="header">
+        <img class="logo" src="./src/logo.png" alt="logo"/>
+        <p class="title"><b> Bangalore Home Help Desk</b></p>
+        <b><label class="conno">Contact : 9739985962</label></b>
+    </div>
+    <div class="list">
+        <div class="list1 lists">
+            <div class="text">
+                <span class="names" herf="realestate" onclick="scrollToSection('realestate')">
+                    Real Estate Works
+                </span>
+            </div>
+            <img class="imgs" src="./src/real-estate.jpg" alt="Real Estate"/>
+        </div>
+        <div class="list2 lists">
+            <div class="text">
+                <span class="names" onclick="scrollToSection('loan')">
+                    All Loans
+                </span>
+            </div>
+            <img class="imgs" src="./src/loan2.jpeg" alt="Loan"/>
+        </div>
+        <div class="list3 lists">
+            <div class="text">
+                <span class="names" onclick="scrollToSection('other')">
+                    Other Works
+                </span>
+            </div>
+            <img class="imgs" src="./src/work.jpg" alt="Works"/>
+        </div>
+        <div class="list4 lists">
+            <div class="text">
+                <span class="names" onclick="scrollToSection('online')">
+                    online application
+                </span>
+            </div>
+            <img class="imgs" src="./src/onlinea.jpg" alt="Loan"/>
+        </div>
+        <div class="arrow" onclick="prevSlide()">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="arrow" style="transform: rotate(270deg);left: 95%;" onclick="nextSlide()">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <section id="realestate">
+        <p class="heading">Real-Estate works</p>
+        <ol class="ol" start="1" type="1">
+            <li>Buying and Selling of property</li>
+            <li>Renting of House</li>
+            <li>Renting of Shops</li>
+            <li>Lease for House</li>
+            <li>Lease of Shops</li>
+        </ol>
+    </section>
+    <section id="loan">
+        <p class="heading">Loans</p>
+        <ol class="ol" start="1" type="1">
+            <li>Personal Loans</li>
+            <Span></Span>
+            <li>Salary Loans</li>
+            <li>Homes Loans</li>
+            <li>Construction Loans</li>
+            <li>Property Loans</li>
+        </ol>
+    </section>
+    <section id="other">
+        <p class="heading">Other Works</p>
+        <ol class="ol" start="1" type="1">
+            <li>Electric Works</li>
+            <li>Plumbing</li>
+            <li>Painting</li>
+            <li>Floor Cleaning</li>
+            <li>Building Cleaning</li>
+            <li>Sump Cleaning</li>
+        </ol>
+    </section>
+    <section id="online">
+        <p class="heading">Online Application</p>
+        <ol class="ol" start="1" type="1">
+            <li>Aadhar</li>
+            <li>Pan</li>
+            <li>E-Stamp</li>
+            <li>Voter Id</li>
+            <li>Ration Card</li>
+            <li>Other Document</li>
+        </ol>
+    </section>
+    <div>
+    <section>
+        <div style="text-align: center;">
+            <p class="heading">Contact Us</p>
+            <div class="contact">Phone : <a href="tel:9739985962">9739985962</a></div>
+            <div>Email : <a href="mailto:bhhd5962@gmail.com">ManiKandan</a></div>
+            <address>Address : <a target="_blank" href="https://maps.app.goo.gl/4Hiz6JGAVKszY9wZ9">1st Main VSR Layout, Udayanagar, Dooravaninagar Post, Bangalore 560016</a></address>
+            <p> developer : <a href="mailto:narayana070203gmail.com">contact</a></p>
+        </div>
+    </section>
+    <script>
+        let currentSlide = 1;
+function showSlide(n) {
+    const slides = document.getElementsByClassName('lists');
+    if (n > slides.length) { currentSlide = 1; }
+    if (n < 1) { currentSlide = slides.length; }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+    slides[currentSlide - 1].style.display = 'block';
+}
+
+function nextSlide() {
+    showSlide(currentSlide += 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide -= 1);
+}
+showSlide(currentSlide);
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+    </script>
+</body>
+</html>
